@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/lab302.dir/main.cpp.o CMakeFiles/lab302.dir/sourses/Lab02.cpp.o  -o lab302 

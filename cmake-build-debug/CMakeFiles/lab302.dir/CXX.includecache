@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/danila/Рабочий стол/lab302/includes/Lab02.h
+cstddef
+-
+ctime
+-
+cstdlib
+-
+string
+-
+time.h
+-
+numeric
+-
+algorithm
+-
+random
+-
+iostream
+-
+GL/glut.h
+-
+
+/home/danila/Рабочий стол/lab302/sourses/Lab02.cpp
+vector
+-
+../includes/Lab02.h
+/home/danila/Рабочий стол/lab302/includes/Lab02.h
+fstream
+-
+
