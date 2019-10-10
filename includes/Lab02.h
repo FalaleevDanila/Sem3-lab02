@@ -38,7 +38,7 @@ public:
 
     static void resultWindow(std::string const &travelVariant, size_t const &numberOfExperiment, int const &size, double const &timeOfArray);
 
-    static void chart(std::vector <int> sizeOfHash, std::vector <double> first, std::vector <double> second, std::vector <double> third);
+    static void chart(std::vector <int> sizeOfCash, std::vector <double> first, std::vector <double> second, std::vector <double> third);
 
     ~Lab02();
 };

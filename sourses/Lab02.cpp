@@ -12,7 +12,8 @@ using std::endl;
 std::vector <int> Lab02::amountOfExperiments() {
     int n = 256;
     std::vector <int> experiments;
-    while(n < 9*1024*3/2){
+    static const auto MAX_SIZE = 9*1024*3/2;
+    while(n < MAX_SIZE){
         experiments.push_back(n);
         n*=2;
     }
@@ -25,7 +26,7 @@ std::vector <int> Lab02::amountOfExperiments() {
      this->size=size;
      array=new int[size];
      srand(time(NULL));
-     for(size_t i = 0; i < size; i++){
+     for(size_t i = 0; i < size; ++i){
          srand(time(NULL));
          array[i]=rand();
      }
@@ -34,7 +35,10 @@ std::vector <int> Lab02::amountOfExperiments() {
 double Lab02::firstToEnd() {
     srand(time(NULL));
     clock_t start = clock();
-    for(size_t i=0;i<1000;i++) {
+
+    static const auto SIZE = 1000;
+
+    for(size_t i=0;i<SIZE;++i) {
         for (size_t j = 0; j < size; j++) {
             array[j] = rand();
         }
@@ -46,7 +50,8 @@ double Lab02::firstToEnd() {
 double Lab02::endToFirst() {
     srand(time(NULL));
     clock_t start = clock();
-    for(size_t i=0;i<1000;i++) {
+    static const auto SIZE = 1000;
+    for(size_t i=0;i<SIZE;++i) {
         for (size_t j = size; j > 0; j--) {
             array[j-1] = rand();
         }
@@ -61,10 +66,10 @@ double Lab02::randomWay() {
     srand(time(NULL));
     std::iota(indexes.begin(), indexes.end(), 0);
     std::shuffle(indexes.begin(), indexes.end(), std::mt19937(std::random_device()()));
-
+    static const auto SIZE = 1000;
     clock_t start = clock();
-    for(size_t i=0;i<1000;i++) {
-        for (size_t j=0;j<size;j++) {
+    for(size_t i=0;i<SIZE;++i) {
+        for (size_t j=0;j<size;++j) {
             array[indexes[j]] = rand();
         }
     }
@@ -85,15 +90,15 @@ void Lab02::resultWindow(std::string const &travelVariant, size_t const &numberO
     cout << "           duration: " << timeOfArray << endl;
 }
 
-void Lab02::chart(std::vector<int> sizeOfHash, std::vector<double> first,
+void Lab02::chart(std::vector<int> sizeOfCash, std::vector<double> first,
         std::vector<double> second, std::vector<double> third) {
 
     std::ofstream out;          // поток для записи
     out.open("/home/danila/Рабочий стол/lab302/firstToEnd.txt"); // окрываем файл для записи
     if (out.is_open())
     {
-        for(size_t i=0;i< sizeOfHash.size();i++) {
-            out << "(" << sizeOfHash[i] << ";" << first[i] << ")";
+        for(size_t i=0;i< sizeOfCash.size();++i) {
+            out << "(" << sizeOfCash[i] << ";" << first[i] << ")";
         }
     }
     out.close();
@@ -101,8 +106,8 @@ void Lab02::chart(std::vector<int> sizeOfHash, std::vector<double> first,
     out.open("/home/danila/Рабочий стол/lab302/endToFirst.txt"); // окрываем файл для записи
     if (out.is_open())
     {
-        for(size_t i=0;i< sizeOfHash.size();i++) {
-            out << "(" << sizeOfHash[i] << ";" << second[i] << ")";
+        for(size_t i=0;i< sizeOfCash.size();++i) {
+            out << "(" << sizeOfCash[i] << ";" << second[i] << ")";
         }
     }
     out.close();
@@ -110,8 +115,8 @@ void Lab02::chart(std::vector<int> sizeOfHash, std::vector<double> first,
     out.open("/home/danila/Рабочий стол/lab302/randomWay.txt"); // окрываем файл для записи
     if (out.is_open())
     {
-        for(size_t i=0;i< sizeOfHash.size();i++) {
-            out << "(" << sizeOfHash[i] << ";" << third[i] << ")";
+        for(size_t i=0;i< sizeOfCash.size();++i) {
+            out << "(" << sizeOfCash[i] << ";" << third[i] << ")";
         }
     }
     out.close();

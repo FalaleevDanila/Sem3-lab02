@@ -1,4 +1,4 @@
-# Install script for directory: /home/danila/Рабочий стол/lab302
+# Install script for directory: /home/danila/CLionProjects/lab302
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/danila/Рабочий стол/lab302/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/danila/CLionProjects/lab302/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

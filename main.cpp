@@ -22,9 +22,10 @@ int main(int argc, char **argv) {
     std::vector <double> randomWay;
 
     std::vector <int> ress = Lab02::amountOfExperiments();
-    for (size_t i = 0; i < ress.size() ; i++ ){
+    static const auto SIZE = 1024/sizeof(decltype(ress)::value_type);
+    for (size_t i = 0 ; i < ress.size(); ++i){
         cout << "investigation:" << endl;
-        Lab02 experiment(ress[i]*1024/ sizeof(decltype(ress)::value_type));
+        Lab02 experiment(ress[i] * SIZE );
         firstToEnd.push_back(experiment.firstToEnd());
         Lab02::resultWindow(" 1 -> end", numberOfExperiment, ress[i], firstToEnd[i]);
         endToFirst.push_back(experiment.endToFirst());
