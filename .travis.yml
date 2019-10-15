@@ -1,10 +1,9 @@
 os:linux
 sudo: required
 language:
--minimal
+"minimal"
 services:
 -docker
 
 notification:
   email:false
-  -master
