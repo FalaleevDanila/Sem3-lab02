@@ -4,5 +4,5 @@ language: "minimal"
 services:
 -docker
 
-notification:
+notifications:
   email: false
