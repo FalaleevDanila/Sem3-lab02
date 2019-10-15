@@ -2,7 +2,7 @@ os: linux
 sudo: required
 language: "minimal"
 services:
--docker
+- docker
 
 notifications:
-  email: false
+    email: false
