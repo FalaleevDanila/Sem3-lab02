@@ -1,9 +1,8 @@
-os:linux
+os: linux
 sudo: required
-language:
-"minimal"
+language: "minimal"
 services:
 -docker
 
 notification:
-  email:false
+  email: false
