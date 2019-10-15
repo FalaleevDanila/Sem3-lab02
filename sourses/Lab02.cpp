@@ -78,7 +78,8 @@ double Lab02::randomWay() {
 
 }
 
-void Lab02::resultWindow(std::string const &travelVariant, size_t const &numberOfExperiment, int const &size, double const &timeOfArray) {
+void Lab02::resultWindow(std::string const &travelVariant, size_t const &numberOfExperiment,
+                                                int const &size, double const &timeOfArray) {
 
     cout << "   travel_variant: " << travelVariant << endl;
     cout << "   experiments: " << endl;
@@ -94,29 +95,41 @@ void Lab02::chart(std::vector<int> sizeOfCash, std::vector<double> first,
         std::vector<double> second, std::vector<double> third) {
 
     std::ofstream out;          // поток для записи
-    out.open("/home/danila/Рабочий стол/lab302/firstToEnd.txt"); // окрываем файл для записи
+    out.open("/home/danila/CLionProjects/lab302/firstToEnd.txt"); // окрываем файл для записи
     if (out.is_open())
     {
-        for(size_t i=0;i< sizeOfCash.size();++i) {
-            out << "(" << sizeOfCash[i] << ";" << first[i] << ")";
+        std::vector <int> :: iterator i1;
+        std::vector <double> :: iterator i2;
+        i1 = sizeOfCash.begin();
+        i2 = first.begin();
+        for(;i1< sizeOfCash.end();++i1,++i2) {
+            out << "(" << *i1 << ";" << *i2 << ")";
         }
     }
     out.close();
 
-    out.open("/home/danila/Рабочий стол/lab302/endToFirst.txt"); // окрываем файл для записи
+    out.open("/home/danila/CLionProjects/lab302/endToFirst.txt"); // окрываем файл для записи
     if (out.is_open())
     {
-        for(size_t i=0;i< sizeOfCash.size();++i) {
-            out << "(" << sizeOfCash[i] << ";" << second[i] << ")";
+        std::vector <int> :: iterator i1;
+        std::vector <double> :: iterator i2;
+        i1 = sizeOfCash.begin();
+        i2 = second.begin();
+        for(;i1< sizeOfCash.end();++i1,++i2) {
+            out << "(" << *i1 << ";" << *i2 << ")";
         }
     }
     out.close();
 
-    out.open("/home/danila/Рабочий стол/lab302/randomWay.txt"); // окрываем файл для записи
+    out.open("/home/danila/CLionProjects/lab302/randomWay.txt"); // окрываем файл для записи
     if (out.is_open())
     {
-        for(size_t i=0;i< sizeOfCash.size();++i) {
-            out << "(" << sizeOfCash[i] << ";" << third[i] << ")";
+        std::vector <int> :: iterator i1;
+        std::vector <double> :: iterator i2;
+        i1 = sizeOfCash.begin();
+        i2 = third.begin();
+        for(;i1< sizeOfCash.end();++i1,++i2) {
+            out << "(" << *i1 << ";" << *i2 << ")";
         }
     }
     out.close();
